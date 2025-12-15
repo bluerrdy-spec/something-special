@@ -1,0 +1,167 @@
+/* === BASE & FONT SETUP === */
+:root {
+    /* Warna kustomisasi */
+    --primary-color: #007bff; 
+    --text-color: #747070;
+    --button-bg: #d87442; /* Contoh warna button */
+    --blur-level: 4px;
+    --transition-speed: 0.8s;
+    
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Penting agar slide tidak menyebabkan scrollbar */
+}
+
+/* Background Utama (Gunakan URL foto Anda di sini) */
+body {
+    background-image: url('https://media.istockphoto.com/id/1919056121/id/vektor/pola-bunga-garis-emas-vektor-latar-belakang-seni-mewah-wallpaper-abstrak-daun-dan-peony.jpg?s=612x612&w=0&k=20&c=gqJGf8P0AkWnajz3Cahu-ciW0tzrOMSZUAXsx2_8SJU='); /* Ganti dengan URL foto Anda */
+    background-size: cover;
+    background-position: center;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Efek Blur pada Seluruh Konten (kecuali saat slide transisi) */
+#slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden; /* Mengontrol tampilan slide */
+}
+
+/* Style untuk Setiap Slide */
+.slide {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Mulai semua slide di luar pandangan (kanan) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: left var(--transition-speed) ease-in-out;
+    z-index: 10;
+    
+    
+    /* Implementasi Blur Ringan pada Background Konten */
+    background-color: rgba(170, 169, 169, 0.579); /* Overlay gelap untuk kontras */
+    backdrop-filter: blur(var(--blur-level));
+    -webkit-backdrop-filter: blur(var(--blur-level));
+    
+    
+}
+
+/* Style untuk Slide yang Aktif */
+.slide.active {
+    left: 0; /* Geser ke tampilan */
+}
+
+.content {
+    text-align: center;
+    max-width: 80%;
+    padding: 20px;
+    transform: translateX(100%); /* Posisi awal animasi masuk */
+    transition: transform var(--transition-speed) ease-out;
+}
+
+/* --- SLIDE 0 (Intro) --- */
+#slide-0 {
+    left: 0; /* Slide 0 harus selalu terlihat saat load */
+    background: none; /* Hilangkan overlay agar tombol terlihat jelas */
+    backdrop-filter: none;
+}
+
+#slide-0 .content {
+    transform: scale(0.5); /* Dimulai kecil */
+    transition: transform 1s ease-in-out;
+}
+#slide-0.active .content {
+    transform: scale(1); /* Membesar saat aktif */
+}
+
+.animated-button {
+    padding: 15px 30px;
+    font-size: 1.5em;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--button-bg);
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --- ANIMASI TRANSISI SLIDE (GESER) --- */
+.slide.transitioning-out {
+    left: -100%;
+}
+.slide.transitioning-in .content {
+    transform: translateX(100%); /* Awalnya di kanan, akan digeser ke 0 oleh JS */
+}
+.slide.active .content {
+    transform: translateX(0); /* Teks masuk dari kanan ke posisi tengah */
+}
+/* Penyesuaian untuk Slide 0 agar hanya muncul sekali */
+#slide-0.active .content {
+    transform: scale(1);
+}
+
+
+/* --- SLIDE LAINNYA (1-12) --- */
+.slide:not(#slide-0) .content {
+    /* Semua slide konten akan menggunakan animasi geser masuk dari kanan */
+    transform: translateX(100%); 
+}
+/* Saat aktif, transisi ke 0 */
+.slide.active:not(#slide-0) .content {
+    transform: translateX(0);
+}
+
+
+
+/* GIF SECTION STYLE */
+#slide-13 #moving-image {
+    max-width: 100%;
+    max-height: 60vh;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+#loop-button {
+    background-color: #9000ff;
+}
+
+/* NAVIGASI PANAH */ 
+.nav-arrow {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 0 10px rgb(212, 0, 255);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.nav-arrow.visible {
+    opacity: 1;
+    visibility: visible;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>something special</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome untuk ikon Panah -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- Audio Background (Anda bisa mengganti 'music.mp3' dengan path lagu Anda) -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.youtube.com/watch?v=VRpzJabYlQQ&list=RDVRpzJabYlQQ&start_radio=1&pp=ygUQb25lIGRpcmVjdGlvbiAxOKAHAQ%3D%3D">
+        Browser Anda tidak mendukung tag audio.
+    </audio>
+
+    <div id="slider-container">
+        
+        <!-- SLIDE 0: INTRO / WELCOME -->
+        <div class="slide" id="slide-0">
+            <div class="content intro-content">
+                <h1>Hallo bub, i've something here for you </h1>
+                <button id="start-button" class="animated-button">pencet kat sini</button>
+            </div>
+        </div>
+
+        <!-- SLIDE 1 sampai 11: Konten Teks -->
+        <div class="slide" id="slide-1">
+            <div class="content">
+                <img id="moving-image" src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyeThjZGRmZWdibHE1andmZXRlaTI4aWt6dDFxbGxhc3pmcm83OTh5byZlcD12MV9naWZzX3NlYXJjaCZjdD1n/KztT2c4u8mYYUiMKdJ/source.gif" alt="Gambar Bergerak">
+                <h2>Penn, ga kerasa 2025 tinggal 16 hari lagi ya...</h2>
+                <p>Pasti berat ya bertahan sejauh ini?</p>
+            </div>
+        </div>
+        
+        <div class="slide" id="slide-2">
+            <div class="content">
+                <img id="moving-image" src="https://media.tenor.com/IAkKl4ZzWcoAAAAj/boo-dudu-cute.gif" alt="Gambar Bergerak">
+                <h2>Bangun di setiap pagi terasa berat</h2>
+                <h2>Rasa khawatir di setiap malam pun sering membuat kamu sesak kan?</h2>
+            </div>
+        </div>
+
+        <!-- ... (Anda perlu menambahkan 9 slide lagi (slide-3 hingga slide-11) dengan struktur serupa) ... -->
+        
+        <div class="slide" id="slide-3">
+            <div class="content">
+                <img id="moving-image" src="https://i.pinimg.com/originals/d7/f5/87/d7f587da442a54025daf47091fe26ba0.gif" alt="Gambar Bergerak">
+                <h2>Kadang kamu ragu, apakah langkahmu sudah benar.</h2>
+                <h2>Lalu datang hari dimana hatimu hancur, hanya karena satu orang.</h2>
+            </div>
+        </div>
+        <div class="slide" id="slide-4">
+            <div class="content">
+                <img id="moving-image" src="https://i.pinimg.com/originals/d0/e5/45/d0e5451273c83ccf1abe71c366c08b63.gif" alt="Gambar Bergerak">
+                <h2>Makanya sebelum tahun ini benar benar berakhir,</h2>
+                <h2>aku cuma mau bilang ini ke kamu.</h2>
+             </div>
+        </div>
+        <div class="slide" id="slide-5">
+            <div class="content">
+                <h2>Meskipun orang nggak lihat, aku tau kok.</h2>
+                <h2>Aku tau seberapa kamu berusaha dan bertahan selama masa masa itu.</h2>
+            </div>
+        </div>
+        <div class="slide" id="slide-6">
+            <div class="content">
+                <h2>Aku tau banyak momen kamu hampir menyerah.</h2>
+                <h2>Terima kasih yaaa... sudah tetap bertahan sampai sejauh ini.</h2>
+            </div>
+        </div>
+        <div class="slide" id="slide-7">
+            <div class="content">
+                <h2>Semua air mata yang jatuh tahun ini,</h2>
+                <h2>akan tumbuh jadi cahaya yang buat kamu bersinar lebih terang nanti</h2>
+            </div>
+        </div>
+        <div class="slide" id="slide-8">
+            <div class="content">
+                <h2>Jadiiii,</h2>
+                <h2>Semoga sisa hari yang tinggal sedikit ini bisa kamu lewati dengan lebih ringan dan bahagia yaaa?</h2>
+            </div>
+        </div>
+        <div class="slide" id="slide-9">
+            <div class="content">
+                <h2>Kamu layak bahagia, lebih dari yang kamu kira.</h2>
+                <h2>Semoga kata kata ini bisa jadi pelukan kecil untuk hatimu.</h2>
+                <p>kalau nanti kamu capek lagi, baca ulang aja yaa...</p>
+            </div>
+        </div>
+        <div class="slide" id="slide-10">
+            <div class="content">
+                <h2>Ohh yaa hampir lupa, masih ada lagi yang mau aku sampaikan ke kamu</h2>
+                <p>muehehehehehe</p>
+            </div>
+        </div>
+        <div class="slide" id="slide-11">
+            <div class="content">
+                <h2>Thank u for coming into my life</h2>
+                <h2>You are actually making me smile and laugh fr.</h2>
+                <h2>Thank u for your understanding.</h2>
+                <h2>Thank u for being my biggest supporter and thank u for caring bout me</h2>
+                <h2>I love you a lot💕</h2>
+            </div>
+        </div>
+
+        <!-- SLIDE 13: GAMBAR BERGERAK + LOOP -->
+        <div class="slide" id="slide-13">
+            <div class="content gif-content">
+                <!-- Ganti 'your_moving_image.gif' dengan link gambar/GIF Anda -->
+                <img id="moving-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6PdBxZ6JtaT203EiBJ87t20L7AFyQd2afnw&s" alt="Gambar Bergerak">
+                <p>No matter how you feel inside you are not alone</p>
+                <button id="loop-button">klik ini buat baca ulang</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Navigasi Panah (Hanya muncul setelah slide 0) -->
+    <button id="next-slide-btn" class="nav-arrow">
+        <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
